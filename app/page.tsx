@@ -1,6 +1,6 @@
 "use client"
 
-import Invoice from "@/components/invoice"
+import Invoice from "@/components/invoice-preview"
 import InvoiceForm from "@/components/invoice-form"
 
 import { Button } from "@/components/ui/button"
