@@ -13,12 +13,10 @@ import {useState} from "react"
 
 export default function InvoiceDetails() {
     const { invoice , updateInvoice} = useInvoice()
-const [date, setDate] = useState("");
+
   
 
-    console.log(invoice.invoiceNumber)
-    console.log(invoice.date);
-   
+ 
     
 
 

@@ -3,7 +3,7 @@ import { Button } from "./ui/button"
 import { ScanEye } from "lucide-react"
 import { useState } from "react"
 import Home from "@/app/page"
-
+import {useInvoice} from "../context/invoice-context"
 
 import {
   Card,
@@ -35,6 +35,7 @@ export const items = [
   }, 
 ]
 
+
 export default function InvoicePreview(){
   const [showHome, setShowHome] = useState(false)
   if (showHome){
@@ -42,7 +43,7 @@ export default function InvoicePreview(){
       <Home/>
     )
   }
-
+ const { invoice } = useInvoice()
     return(
         <div className="min-h-screen bg-gray-50 p-4">
         <div className="max-w-4xl mx-auto">
@@ -62,14 +63,14 @@ export default function InvoicePreview(){
             <CardHeader>
               <CardTitle className="flex justify-between items-center">
                 <h1 className="font-bold text-3xl">INVOICE</h1>
-                <p className="font-normal">Date: November 2, 2025</p>
+                <p className="font-normal">Date: {invoice.date}</p>
               </CardTitle>
-              <p>#INV-1762156096796</p>
+              <p>{invoice.invoiceNumber}</p>
               <div>
 
                 <div className="flex items-center ">
-                  <p className="basis-1/2 font-bold">From:</p>
-                  <p className="basis-1/2 font-bold">To:</p>
+                  <p className="basis-1/2 font-bold">From: {invoice.fromName}</p>
+                  <p className="basis-1/2 font-bold">To: {invoice.toName}</p>
                 </div>
 
                 <br></br>
